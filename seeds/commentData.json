@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "content": "Yas queen!",
+    "author": "2",
+    "post_id": "2"
+  },
+  {
+    "id": "2",
+    "content": "Slay me mom",
+    "author": "5",
+    "post_id": "3"
+  },
+  {
+    "id": "3",
+    "content": "Where Megan at",
+    "author": "3",
+    "post_id": "1"
+  }
+]
