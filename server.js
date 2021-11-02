@@ -26,6 +26,12 @@ const sess = {
   })
 };
 
+// const sess = {
+//   secret: 'Super secret secret',
+//   resave: false,
+//   saveUninitialized: true,
+// };
+
 // Add express-session and store as Express.js middleware
 app.use(session(sess));
 

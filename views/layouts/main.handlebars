@@ -14,16 +14,16 @@
       A-Da Blog
     </h1>
     <!-- Only display the logout button if the user is logged in -->
-    <nav>
-      <button class="btn" id="home-btn">Home</button>
-      <button class="btn" id="dash-btn">Dashboard</button>
-      {{#if logged_in}}
-      <button class="btn" id="logout">Logout</button>
-      {{else}}
-      <button class="btn" id="login">Login</button>
-      {{/if}}
-    </nav>
   </header>
+  <nav>
+    <a href="/">Home</a>
+    <button class="btn" id="dash-btn">Dashboard</button>
+    {{#if logged_in}}
+    <button class="btn" id="logout">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}
+  </nav>
   <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>
@@ -34,6 +34,8 @@
   <!-- Only include the logout script if the user is logged in -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+  {{!-- {{else}}
+  <script src="/js/login.js"></script> --}}
   {{/if}}
 </body>
 
