@@ -1,4 +1,4 @@
-<h3>My Posts</h3>
+<h3>My Blog Posts</h3>
 
 {{#if logged_in}}
 {{#each posts as |post| }}
@@ -10,7 +10,10 @@
     <p>{{content}}</p>
   </div>
 </div>
-
 {{/each}}
+
+<div class="form-group">
+  <button class="btn btn-primary" type="submit">Create New Post</button>
+</div>
 {{/if}}
 

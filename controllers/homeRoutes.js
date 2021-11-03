@@ -91,7 +91,19 @@ router.get('/dashboard', async (req, res) => {
       res.status(500).json(err);
     }
   };
+})
 
-  })
+// router.post('/post/:id', async (req, res) => {
+//   try {
+//     const dbPostData = await Post.create(req.params.id);
+
+//     const post = dbPostData.get({ plain: true });
+    
+//     res.render('post', { post, logged_in: req.session.logged_in });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;

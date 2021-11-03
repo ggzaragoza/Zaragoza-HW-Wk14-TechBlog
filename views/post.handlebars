@@ -1,7 +1,16 @@
 <section class="container">
   <h3>{{post.title}}</h3>
-  <h4>by {{post.user_id}}</h4>
+  <h4>by {{post.username}}</h4>
   <section class="flex-row justify-center">
     <p>{{post.content}}</p>
   </section>
+  <section class="flex-row justify-center">
+    <p>{{comment.content}}</p>
+  </section>
+
+<div class="form-group">
+  <label for="add-comment">Leave a Comment:</label>
+  <input class="form-input" type="comment" id="new-comment" />
+</div>
+
 </section>
