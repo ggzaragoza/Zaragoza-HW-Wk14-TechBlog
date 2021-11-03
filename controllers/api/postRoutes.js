@@ -19,26 +19,27 @@ const withAuth = require('../../utils/auth');
 
 
 // GET ALL POSTS BY AUTHOR aka DASHBOARD ROUTE
-router.get('/dashboard', withAuth, async (req, res) => {
-  try {
-    const dashboardData = await Post.findAll({
-      where: {
-        user_id: req.session.user_id
-      },
-      include: [{ model: User }]
-    });
+// router.get('/', async (req, res) => {
+//   try {
+//     const postData = await Post.findAll({
+//       include: [ { model: User } ],
+//       where: {
+//         user_id: req.session.user_id
+//       },
+//     }
+//     );
 
-    const dashboard = dashboardData.map((post) => post.get({ plain: true }));
+//     const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('dashboard', {
-      dashboard,
-      // Pass the logged in flag to the template
-      user_id: req.session.user_id,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('dashboard', {
+//       posts,
+//       // Pass the logged in flag to the template
+//       user_id: req.session.user_id,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
