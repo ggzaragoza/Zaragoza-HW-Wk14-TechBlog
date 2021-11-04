@@ -1,4 +1,4 @@
-<section class="container">
+{{!-- <section class="container">
   <h3>{{post.title}}</h3>
   <h4>by {{post.username}}</h4>
   <section class="flex-row justify-center">
@@ -13,4 +13,34 @@
   <input class="form-input" type="comment" id="new-comment" />
 </div>
 
-</section>
+</section> --}}
+
+<div class="text-left">
+  <h2>{{post.title}}</h2>
+  {{!-- <p>{{{get_emoji}}}</p> --}}
+  <p>{{post.content}}</p>
+  <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
+  {{!-- <p>
+    <span for="img" aria-label="money">💲</span>
+    <span class="dollar-amount">{{format_amount needed_funding}}</span>
+    needed
+  </p> --}}
+  <p>
+    <button class="btn btn-primary">Fund this Project!</button>
+  </p>
+</div>
+
+
+
+
+
+{{!-- post details handlebars --}}
+
+{{!-- <div class="row align-center mb-5">
+  <div class="col-md-6">
+    <a href="/post/{{id}}"><h2>{{title}} by {{user.username}}</h2></a>
+  </div>
+  <div class="col-md-6">
+    <p>{{content}}</p>
+  </div>
+</div> --}}

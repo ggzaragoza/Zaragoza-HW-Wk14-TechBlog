@@ -3,18 +3,21 @@
     "id": "1",
     "title": "Test Post 1",
     "content": "Blah blah blah",
+    "date_created": "09/19/2021",
     "user_id": "1"
   },
   {
     "id": "2",
     "title": "Test Post 2",
     "content": "Yada yada",
+    "date_created": "09/07/2021",
     "user_id": "2"
   },
   {
     "id": "3",
     "title": "Test Post 3",
-    "content": "Wat da hook gon be",
+    "content": "I need sleep",
+    "date_created": "05/31/2021",
     "user_id": "5"
   }
 ]

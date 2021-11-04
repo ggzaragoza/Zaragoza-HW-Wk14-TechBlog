@@ -30,11 +30,21 @@ router.get('/', async (req, res) => {
 // GET SINGLE POST
 router.get('/post/:id', async (req, res) => {
   try {
-    const dbPostData = await Post.findByPk(req.params.id);
+    const dbPostData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          // attributes: ['username'],
+        },
+      ]});
 
     const post = dbPostData.get({ plain: true });
     
-    res.render('post', { post, logged_in: req.session.logged_in });
+    res.render('post', {
+      post,
+      logged_in: req.session.logged_in,
+      // username: Post.user_id
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -72,9 +82,9 @@ router.get('/dashboard', async (req, res) => {
   } else {
     try {
       const postData = await Post.findAll({
-        include: [ { model: User } ],
+        // include: [ { model: User, attributes: ['username'] } ],
         where: {
-          user_id: req.session.user_id
+          id: req.session.user_id
         },
       }
       );
@@ -83,8 +93,8 @@ router.get('/dashboard', async (req, res) => {
   
       res.render('dashboard', {
         posts,
-        // Pass the logged in flag to the template
-        user_id: req.session.user_id,
+        username: req.session.user_name,
+        id: req.session.user_id,
         logged_in: req.session.logged_in,
       });
     } catch (err) {
