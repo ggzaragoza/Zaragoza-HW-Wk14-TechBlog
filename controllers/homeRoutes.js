@@ -76,32 +76,27 @@ router.get('/login', (req, res) => {
 // });
 
 // GET ALL POSTS BY AUTHOR aka DASHBOARD ROUTE
-router.get('/dashboard', async (req, res) => {
-  if (!req.session.logged_in) {
-    res.redirect('/login')
-  } else {
+router.get('/dashboard', withAuth, async (req, res) => {
+  // if (!req.session.logged_in) {
+  //   res.redirect('/login')
+  // } else {
     try {
-      const postData = await Post.findAll({
+      const userData = await User.findByPk(req.session.user_id, {
         // include: [ { model: User, attributes: ['username'] } ],
-        where: {
-          id: req.session.user_id
-        },
-      }
-      );
+        attributes: { exclude: ['password'] },
+        include: [{ model: Post }],
+      });
   
-      const posts = postData.map((post) => post.get({ plain: true }));
+      const user = userData.get({ plain: true });
   
       res.render('dashboard', {
-        posts,
-        username: req.session.user_name,
-        id: req.session.user_id,
-        logged_in: req.session.logged_in,
+        ...user,
+        logged_in: true,
       });
     } catch (err) {
       res.status(500).json(err);
     }
-  };
-})
+  });
 
 // router.post('/post/:id', async (req, res) => {
 //   try {
