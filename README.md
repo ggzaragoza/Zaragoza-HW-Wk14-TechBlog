@@ -2,6 +2,6 @@
 
 This repository is an exercise in using Handlebars to render pages in a CMS-style blog, using several npm packages such as 'express-session' and 'connect-session-sequelize' for user authentication, and various Express API routes to retrieve posts from a MySQL database. The application has been deployed at the Heroku site below, and files may be forked from this repository and then tested by running an npm install in your own local folder. Provided JSON files can be run to seed your databased for testing purposes.
 
-Several features would ideally be added in the future, including proper functionality for rendering and deleting comments to and from posts as well as the ability to edit posts entirely.
+Users are able to log in with new usernames and passwords at the deployed Heroku application, with their newly created posts appearing on both their dashboards and the homepage. Several features would ideally be added in the future, including proper functionality for rendering and deleting comments to and from posts as well as the ability to edit posts entirely. Pre-populated comments located in commentData.json will appear under their respective posts if run locally, but as of now each post's comment input box is non-functional.
 
 Deployed application: <a href="https://stark-caverns-03625.herokuapp.com/">https://stark-caverns-03625.herokuapp.com/</a>
