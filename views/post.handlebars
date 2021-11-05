@@ -27,7 +27,6 @@
   </p> --}}
 
   <h3>Comments:</h3>
-
   {{#each comments as |comment|}}
   <div class="row mb-2">
     <div class="col-md-8">
@@ -38,7 +37,7 @@
   {{/each}}
 </div>
 
-
+{{#if logged_in}}
 <h3>Add a Comment:</h3>
 <form class="form new-comment-form">
   <div class="form-group">
@@ -49,6 +48,7 @@
     <button type="submit" class="btn btn-primary">Publish</button>
   </div>
 </form>
+{{/if}}
 
 <script src="./js/post.js"></script>
 
